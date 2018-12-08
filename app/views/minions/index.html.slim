@@ -1,0 +1,29 @@
+h1 Listing minions
+
+table
+  thead
+    tr
+      th Name
+      th Yearsofservice
+      th Skills
+      th Height
+      th Weight
+      th
+      th
+      th
+
+  tbody
+    - @minions.each do |minion|
+      tr
+        td = minion.name
+        td = minion.yearsOfService
+        td = minion.skills
+        td = minion.height
+        td = minion.weight
+        td = link_to 'Show', minion
+        td = link_to 'Edit', edit_minion_path(minion)
+        td = link_to 'Destroy', minion, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Minion', new_minion_path

@@ -1,0 +1,24 @@
+= form_for @minion do |f|
+  - if @minion.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@minion.errors.count, "error")} prohibited this minion from being saved:"
+      ul
+        - @minion.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :yearsOfService
+    = f.number_field :yearsOfService
+  .field
+    = f.label :skills
+    = f.text_area :skills
+  .field
+    = f.label :height
+    = f.text_field :height
+  .field
+    = f.label :weight
+    = f.number_field :weight
+  .actions = f.submit

@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @minion.name
+p
+  strong Yearsofservice:
+  = @minion.yearsOfService
+p
+  strong Skills:
+  = @minion.skills
+p
+  strong Height:
+  = @minion.height
+p
+  strong Weight:
+  = @minion.weight
+
+=> link_to 'Edit', edit_minion_path(@minion)
+'|
+=< link_to 'Back', minions_path

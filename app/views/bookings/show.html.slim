@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Numberofweeks:
+  = @booking.numberOfWeeks
+p
+  strong User:
+  = @booking.user_id
+
+=> link_to 'Edit', edit_booking_path(@booking)
+'|
+=< link_to 'Back', bookings_path

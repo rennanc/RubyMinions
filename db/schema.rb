@@ -10,11 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_024607) do
+ActiveRecord::Schema.define(version: 2018_12_08_164634) do
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "numberOfWeeks"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "minions", force: :cascade do |t|
+    t.string "name"
+    t.integer "yearsOfService"
+    t.text "skills"
+    t.float "height"
+    t.integer "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

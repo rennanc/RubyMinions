@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :minions
+  resources :bookings
   get 'static_pages/home'
   get 'static_pages/help'
   resources :microposts
