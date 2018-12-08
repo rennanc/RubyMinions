@@ -38,6 +38,8 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'slim-rails', '~> 3.2'
 gem 'formtastic', '~> 3.1', '>= 3.1.5'
 gem 'devise', '~> 4.5'
+gem 'bcrypt', '3.1.12'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

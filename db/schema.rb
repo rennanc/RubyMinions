@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_08_164634) do
+ActiveRecord::Schema.define(version: 2018_12_08_204610) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "numberOfWeeks"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_12_08_164634) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end
