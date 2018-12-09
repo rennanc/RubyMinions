@@ -40,6 +40,7 @@ gem 'formtastic', '~> 3.1', '>= 3.1.5'
 gem 'devise', '~> 4.5'
 gem 'bcrypt', '3.1.12'
 gem 'rails-controller-testing'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 
 
 group :development, :test do
