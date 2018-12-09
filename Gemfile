@@ -39,6 +39,7 @@ gem 'slim-rails', '~> 3.2'
 gem 'formtastic', '~> 3.1', '>= 3.1.5'
 gem 'devise', '~> 4.5'
 gem 'bcrypt', '3.1.12'
+gem 'rails-controller-testing'
 
 
 group :development, :test do
