@@ -28,7 +28,9 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
+        send_booking_mail
+        
+        format.html { redirect_to @booking, notice: 'A reserva foi criada com sucesso.' }
         format.json { render :show, status: :created, location: @booking }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class BookingsController < ApplicationController
   def update
     respond_to do |format|
       if @booking.update(booking_params)
-        format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
+        format.html { redirect_to @booking, notice: 'A reserva foi atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @booking }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     respond_to do |format|
-      format.html { redirect_to bookings_url, notice: 'Booking was successfully destroyed.' }
+      format.html { redirect_to bookings_url, notice: 'A reserva foi cancelada com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +71,13 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:numberOfWeeks, :user_id)
+      params.require(:booking).permit(:numberOfWeeks, :user_id, :minion_id)
+    end
+    
+    # Send mail after created a booking
+    def send_booking_mail
+      @user = User.find(1)
+      @minion = User.find(1)
+      BookingMailer.with(user: @user, minion: @minion, booking: @booking).booking_success_mail.deliver_now
     end
 end

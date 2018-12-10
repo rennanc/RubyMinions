@@ -1,0 +1,22 @@
+<% @bookings.each do |booking| %>
+  <tr>
+    <td><%= booking.numberOfWeeks %></td>
+    <td><%= booking.user_id %></td>
+    <td><%= booking.minion_id %></td>
+  </tr>
+<% end %>
+
+<h1>Minions</h1>
+<div class="row placeholders">
+<% @minions.each do |minion| %>
+    <div class="col-lg-4">
+        <img src="<%= minion.photoUrl %>" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail" />
+        <h2><%= minion.name %></h2>
+        <span class="text-muted">Anos de Serviço: <%= minion.yearsOfService %></span>
+        <p class="text-muted"><%= minion.skills %></p>
+        <p class="text-muted">
+            <a class="btn btn-default" href="/minions/<%= minion.id %>" role="button">Reservar »</a>
+        </p>
+    </div>
+<% end %>
+</div>

@@ -6,6 +6,7 @@ class CreateMinions < ActiveRecord::Migration[5.2]
       t.text :skills
       t.float :height
       t.integer :weight
+      t.string :photoUrl
 
       t.timestamps
     end

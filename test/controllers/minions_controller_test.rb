@@ -17,7 +17,7 @@ class MinionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create minion" do
     assert_difference('Minion.count') do
-      post minions_url, params: { minion: { height: @minion.height, name: @minion.name, skills: @minion.skills, weight: @minion.weight, yearsOfService: @minion.yearsOfService } }
+      post minions_url, params: { minion: { height: @minion.height, name: @minion.name, skills: @minion.skills, weight: @minion.weight, yearsOfService: @minion.yearsOfService, @minion.photoUrl } }
     end
 
     assert_redirected_to minion_url(Minion.last)
@@ -34,7 +34,7 @@ class MinionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update minion" do
-    patch minion_url(@minion), params: { minion: { height: @minion.height, name: @minion.name, skills: @minion.skills, weight: @minion.weight, yearsOfService: @minion.yearsOfService } }
+    patch minion_url(@minion), params: { minion: { height: @minion.height, name: @minion.name, skills: @minion.skills, weight: @minion.weight, yearsOfService: @minion.yearsOfService, @minion.photoUrl } }
     assert_redirected_to minion_url(@minion)
   end
 

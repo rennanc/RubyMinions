@@ -14,6 +14,7 @@ class BookingsTest < ApplicationSystemTestCase
     visit bookings_url
     click_on "New Booking"
 
+    fill_in "Minion", with: @booking.minion_id
     fill_in "Numberofweeks", with: @booking.numberOfWeeks
     fill_in "User", with: @booking.user_id
     click_on "Create Booking"
@@ -26,6 +27,7 @@ class BookingsTest < ApplicationSystemTestCase
     visit bookings_url
     click_on "Edit", match: :first
 
+    fill_in "Minion", with: @booking.minion_id
     fill_in "Numberofweeks", with: @booking.numberOfWeeks
     fill_in "User", with: @booking.user_id
     click_on "Update Booking"

@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_08_204610) do
+ActiveRecord::Schema.define(version: 2018_12_09_222050) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "numberOfWeeks"
     t.integer "user_id"
+    t.integer "minion_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 2018_12_08_204610) do
     t.text "skills"
     t.float "height"
     t.integer "weight"
+    t.string "photoUrl"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

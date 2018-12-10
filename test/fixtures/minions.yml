@@ -6,6 +6,7 @@ one:
   skills: MyText
   height: 1.5
   weight: 1
+  photoUrl: MyString
 
 two:
   name: MyString
@@ -13,3 +14,4 @@ two:
   skills: MyText
   height: 1.5
   weight: 1
+  photoUrl: MyString

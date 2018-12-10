@@ -5,6 +5,7 @@ table
     tr
       th Numberofweeks
       th User
+      th Minion
       th
       th
       th
@@ -14,6 +15,7 @@ table
       tr
         td = booking.numberOfWeeks
         td = booking.user_id
+        td = booking.minion_id
         td = link_to 'Show', booking
         td = link_to 'Edit', edit_booking_path(booking)
         td = link_to 'Destroy', booking, data: { confirm: 'Are you sure?' }, method: :delete

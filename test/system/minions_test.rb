@@ -19,6 +19,7 @@ class MinionsTest < ApplicationSystemTestCase
     fill_in "Skills", with: @minion.skills
     fill_in "Weight", with: @minion.weight
     fill_in "Yearsofservice", with: @minion.yearsOfService
+    fill_in "photoUrl", with: @minion.photoUrl
     click_on "Create Minion"
 
     assert_text "Minion was successfully created"
@@ -34,6 +35,7 @@ class MinionsTest < ApplicationSystemTestCase
     fill_in "Skills", with: @minion.skills
     fill_in "Weight", with: @minion.weight
     fill_in "Yearsofservice", with: @minion.yearsOfService
+    fill_in "photoUrl", with: @minion.photoUrl
     click_on "Update Minion"
 
     assert_text "Minion was successfully updated"
